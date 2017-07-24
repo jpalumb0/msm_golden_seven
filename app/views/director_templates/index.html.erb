@@ -5,25 +5,24 @@
 <div class="container">
   <% @directors.each do |director| %>
   
-    <div class="row"> 
-        <div class="col-lg-1">
-            <h5><%= director.name %></h5>
-            
+    <div class="row" style="height:450px; padding-top:25px; padding-bottom:25px"> 
+        <div class="col-lg-2">
+            <h4><%= director.name %></h4>
+            <p>Born: <%= director.dob %></p>
+            <div class="list-group">
                 <a class = "btn btn-default" href="/directors/<%= director.id %>" role="button">Show details</a>
                 <a class = "btn btn-default" href="/directors/<%= director.id %>/edit_form" role="button">Edit</a>
                 <a class = "btn btn-default" href="/delete_director/<%= director.id %>" role="button">Delete</a>
+            </div>
             
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2" style="word-wrap:break-word">
             <a href="<%= director.image_url %>" class="thumbnail">
                 <img src= "<%= director.image_url %>">
-                image
+                <%= director.image_url %>
             </a>
         </div>
-        <div class="col-lg-1">
-            <p><%= director.dob %></p>
-        </div>
-        <div class="col-lg-8">
+        <div class="col-lg-8" style="overflow:scroll">
             <p><%= director.bio %></p>
         </div>
         

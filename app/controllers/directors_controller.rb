@@ -6,16 +6,20 @@ class DirectorsController < ApplicationController
     def create_row
        
         source = params["the_source"]
-        caption = params["the_caption"]
+        name = params["the_name"]
+        dob = params["the_dob"]
+        bio = params["the_bio"]
         
-        p = Photo.new
+        d = Director.new
         
-        p.source = source
-        p.caption = caption
+        d.image_url = source
+        d.name = name
+        d.dob = dob
+        d.bio = bio
         
-        p.save
+        d.save
         
-        redirect_to("/photos")
+        redirect_to("/directors")
     end
     
     def index
