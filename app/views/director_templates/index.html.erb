@@ -1,0 +1,32 @@
+<h1>All Directors</h1>
+
+<a href = "/directors/new_form">Add a new director</a>
+
+<div class="container">
+  <% @directors.each do |director| %>
+  
+    <div class="row"> 
+        <div class="col-lg-1">
+            <h5><%= director.name %></h5>
+            
+                <a class = "btn btn-default" href="/directors/<%= director.id %>" role="button">Show details</a>
+                <a class = "btn btn-default" href="/directors/<%= director.id %>/edit_form" role="button">Edit</a>
+                <a class = "btn btn-default" href="/delete_director/<%= director.id %>" role="button">Delete</a>
+            
+        </div>
+        <div class="col-lg-2">
+            <a href="<%= director.image_url %>" class="thumbnail">
+                <img src= "<%= director.image_url %>">
+                image
+            </a>
+        </div>
+        <div class="col-lg-1">
+            <p><%= director.dob %></p>
+        </div>
+        <div class="col-lg-8">
+            <p><%= director.bio %></p>
+        </div>
+        
+    </div> 
+  <% end %>
+</div>
