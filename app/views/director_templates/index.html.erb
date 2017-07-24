@@ -1,6 +1,6 @@
 <h1>All Directors</h1>
 
-<a href = "/directors/new_form">Add a new director</a>
+<a href = "/directors/new_form">Create director</a>
 
 <div class="container">
   <% @directors.each do |director| %>
@@ -11,8 +11,8 @@
             <p>Born: <%= director.dob %></p>
             <div class="list-group">
                 <a class = "btn btn-default" href="/directors/<%= director.id %>" role="button">Show details</a>
-                <a class = "btn btn-default" href="/directors/<%= director.id %>/edit_form" role="button">Edit</a>
-                <a class = "btn btn-default" href="/delete_director/<%= director.id %>" role="button">Delete</a>
+                <a class = "btn btn-default" href="/directors/<%= director.id %>/edit_form" role="button">Edit director</a>
+                <a class = "btn btn-default" href="/delete_director/<%= director.id %>" role="button">Delete director</a>
             </div>
             
         </div>
