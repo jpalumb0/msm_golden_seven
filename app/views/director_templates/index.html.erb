@@ -9,14 +9,15 @@
         <div class="col-lg-1">
             <h5><%= director.name %></h5>
             
-                <a class = "btn btn-default" href="/directors/<%= director.id %>" role="button">Details</a>
+                <a class = "btn btn-default" href="/directors/<%= director.id %>" role="button">Show details</a>
                 <a class = "btn btn-default" href="/directors/<%= director.id %>/edit_form" role="button">Edit</a>
                 <a class = "btn btn-default" href="/delete_director/<%= director.id %>" role="button">Delete</a>
             
         </div>
         <div class="col-lg-2">
-            <a href="#" class="thumbnail">
+            <a href="<%= director.image_url %>" class="thumbnail">
                 <img src= "<%= director.image_url %>">
+                image
             </a>
         </div>
         <div class="col-lg-1">
