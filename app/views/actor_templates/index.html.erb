@@ -1,0 +1,31 @@
+<h1>All Actors</h1>
+
+<a href = "/actors/new_form">Add a new actor</a>
+
+<div class="container">
+  <% @actors.each do |actor| %>
+  
+    <div class="row" style="height:450px; padding-top:25px; padding-bottom:25px"> 
+        <div class="col-lg-2">
+            <h4><%= actor.name %></h4>
+            <p>Born: <%= actor.dob %></p>
+            <div class="list-group">
+                <a class = "btn btn-default" href="/actors/<%= actor.id %>" role="button">Show details</a>
+                <a class = "btn btn-default" href="/actors/<%= actor.id %>/edit_form" role="button">Edit actor</a>
+                <a class = "btn btn-default" href="/delete_actor/<%= actor.id %>" role="button">Delete actor</a>
+            </div>
+            
+        </div>
+        <div class="col-lg-2" style="word-wrap:break-word">
+            <a href="<%= actor.image_url %>" class="thumbnail">
+                <img src= "<%= actor.image_url %>">
+                <%= actor.image_url %>
+            </a>
+        </div>
+        <div class="col-lg-8" style="overflow:scroll">
+            <p><%= actor.bio %></p>
+        </div>
+        
+    </div> 
+  <% end %>
+</div>
