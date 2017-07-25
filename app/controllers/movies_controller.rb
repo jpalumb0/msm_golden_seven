@@ -1,63 +1,76 @@
 class MoviesController < ApplicationController
     def new_form
-        render("director_templates/new_form.html.erb")
+        render("movie_templates/new_form.html.erb")
     end
     
     def create_row
        
         source = params["the_source"]
-        caption = params["the_caption"]
+        title = params["the_title"]
+        year = params["the_year"]
+        description = params["the_description"]
+        duration = params["the_duration"]
         
-        p = Photo.new
+        m = Movie.new
         
-        p.source = source
-        p.caption = caption
+        m.image_url = source
+        m.title = title
+        m.year = year
+        m.description = description
+        m.duration = duration
         
-        p.save
+        m.save
         
-        redirect_to("/photos")
+        redirect_to("/movies")
     end
     
     def index
         
-        @directors = Director.all.order(created_at: :desc)
-        render("director_templates/index.html.erb")
+        @movies = Movie.all.order(title: :asc)
+        render("movie_templates/index.html.erb")
     end
     
     def show
        
-       @pic = Photo.find(params["an_id"])
+       @movie = Movie.find(params["an_id"])
        
-       render("director_templates/show.html.erb")
+       render("movie_templates/show.html.erb")
     end
     
     def edit_form
         
-        @pic = Photo.find(params["some_id"])
+        @movie = Movie.find(params["some_id"])
         
-        render("director_templates/edit_form.html.erb")
+        render("movie_templates/edit_form.html.erb")
     end
     
     def update_row
         
-        @pic = Photo.find(params["the_id"])
+        @movie = Movie.find(params["the_id"])
         
         new_source = params["the_source"]
-        new_caption = params["the_caption"]
+        new_title = params["the_title"]
+        new_year = params["the_year"]
+        new_description = params["the_description"]
+        new_duration = params["the_duration"]
         
-        @pic.source = new_source
-        @pic.caption = new_caption
+        @movie.image_url = new_source
+        @movie.title = new_title
+        @movie.year = new_year
+        @movie.description = new_description
+        @movie.duration = new_duration
         
-        @pic.save
         
-        redirect_to("/photos/"+@pic.id.to_s)
+        @movie.save
+        
+        redirect_to("/movies/"+@movie.id.to_s)
     end
     
     def destroy_row
         
-        @pic = Photo.find(params["toast_id"])
-        @pic.destroy
+        @movie = Movie.find(params["toast_id"])
+        @movie.destroy
         
-        redirect_to("/photos")
+        redirect_to("/movies")
     end
 end

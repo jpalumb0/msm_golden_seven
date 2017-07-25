@@ -1,39 +1,47 @@
-<h1>Edit <%= @director.name %></h1>
+<h1>Edit <%= @movie.title %></h1>
 
-<form action="/update_directors/<%= @director.id %>">
+<form action="/update_movies/<%= @movie.id %>">
   <div>
     <label for="source_input">
       Image url
     </label>
 
-    <input id="source_input" type="text" name="the_source" value = "<%= @director.image_url %>">
+    <input id="source_input" type="text" name="the_source" value = "<%= @movie.image_url %>">
   </div>
 
   <div>
-    <label for="name_input">
-      Name
+    <label for="title_input">
+      Title
     </label>
 
-    <input id="name_input" type="text" name="the_name" value = "<%= @director.name %>">
-  </div>
-  
-  <div>
-    <label for="dob_input">
-      Dob
-    </label>
-
-    <input id="dob_input" type="text" name="the_dob" value = "<%= @director.dob %>">
+    <input id="title_input" type="text" name="the_title" value = "<%= @movie.title %>">
   </div>
   
   <div>
-    <label for="bio_input">
-      Biography
+    <label for="year_input">
+      Year
     </label>
 
-    <textarea id="bio_input" class="form-control" rows="8" name="the_bio"><%= @director.bio %></textarea>
+    <input id="year_input" type="text" name="the_year" value = "<%= @movie.year %>">
+  </div>
+  
+  <div>
+    <label for="duration_input">
+      Duration
+    </label>
+
+    <input id="duration_input" type="text" name="the_duration" value = "<%= @movie.duration %>">
+  </div>
+  
+  <div>
+    <label for="description_input">
+      Description
+    </label>
+
+    <textarea id="description_input" class="form-control" rows="8" name="the_description"><%= @movie.description %></textarea>
   </div>
 <br>
   <button>
-    Update director
+    Update movie
   </button>
 </form>
