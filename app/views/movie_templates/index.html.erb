@@ -1,0 +1,31 @@
+<h1>All Movies</h1>
+
+<a href = "/movies/new_form">Add a new movie</a>
+
+<div class="container">
+  <% @movies.each do |movie| %>
+  
+    <div class="row" style="height:450px; padding-top:25px; padding-bottom:25px"> 
+        <div class="col-lg-2">
+            <h4><%= movie.title %> (<%= movie.year %>)</h4>
+            <p>Duration: <%= movie.duration %> mins</p>
+            <div class="list-group">
+                <a class = "btn btn-default" href="/movies/<%= movie.id %>" role="button">Show details</a>
+                <a class = "btn btn-default" href="/movies/<%= movie.id %>/edit_form" role="button">Edit movie</a>
+                <a class = "btn btn-default" href="/delete_movie/<%= movie.id %>" role="button">Delete movie</a>
+            </div>
+            
+        </div>
+        <div class="col-lg-2" style="word-wrap:break-word">
+            <a href="<%= movie.image_url %>" class="thumbnail">
+                <img src= "<%= movie.image_url %>">
+                <%= movie.image_url %>
+            </a>
+        </div>
+        <div class="col-lg-8" style="overflow:scroll">
+            <p><%= movie.description %></p>
+        </div>
+        
+    </div> 
+  <% end %>
+</div>

@@ -1,0 +1,22 @@
+<h1><%= @movie.title %> (<%= @movie.year %>)</h1>
+
+<a href="<%= @movie.image_url %>" class="thumbnail">
+    <img src="<%= @movie.image_url %>">
+    <%= @movie.image_url %>
+</a>
+    
+
+
+
+<p>Duration: <%= @movie.duration %> mins </p>
+<br>
+<h4>Description</h4>
+<p><%= @movie.description %></p>
+
+<div class = "row">
+    
+        <a class = "btn btn-default" href="/movies">Go Back</a>
+        <a class = "btn btn-default" href="/movies/<%= @movie.id %>/edit_form">Edit movie</a>
+        <a class = "btn btn-default" href="/delete_movie/<%= @movie.id %>">Delete movie</a>
+    
+</div>

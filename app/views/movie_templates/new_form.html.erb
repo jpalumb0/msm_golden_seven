@@ -1,0 +1,49 @@
+<h1>Add a new movie</h1>
+
+<form action="/create_movie">
+    <div>
+        <label for="title_input">
+          Title
+        </label>
+
+        <input id="title_input" type="text" name="the_title">
+    </div>
+            
+    <div>
+        <label for="source_input">
+          Image url
+        </label>
+    
+        <input id="source_input" type="text" name="the_source">
+    </div>
+    
+    
+      
+    <div>
+        <label for="year_input">
+          Year
+        </label>
+    
+        <input id="year_input" type="text" name="the_year">
+    </div>
+    
+    <div>
+        <label for="duration_input">
+          Duration
+        </label>
+    
+        <input id="duration_input" type="text" name="the_duration">
+    </div>
+      
+    <div>
+        <label for="description_input">
+          Description
+        </label>
+    
+        <textarea id="description_input" class="form-control" rows="8" name="the_description"></textarea>
+    </div>
+    <br>
+      <button>
+        Create movie
+      </button>
+</form>
